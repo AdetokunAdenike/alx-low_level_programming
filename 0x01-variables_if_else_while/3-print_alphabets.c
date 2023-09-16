@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - A program that prints the alphabet in lowercase, and then in uppercase
+ * main - A program that prints the alphabet in lowercas and uppercase
  *
  * Return: Always 0.
  */
-int main()
+int main(void)
 {
 	char letter = 'a';
+
 	while (letter <= 'z')
 	{
 		putchar(letter);
