@@ -2,10 +2,8 @@
 
 /**
  * print_alphabet - prints the alphabet in lowercase, followed by a new line.
- *
- * Return 0
  */
-int main(void)
+void print_alphabet(void)
 {
 	char letter;
 
@@ -14,5 +12,4 @@ int main(void)
 
 	_putchar('\n');
 
-	return(0);
 }
