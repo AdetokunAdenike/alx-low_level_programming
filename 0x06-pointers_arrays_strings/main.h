@@ -1,8 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdio.h>
-#include <unistd.h>
+#ifndef INV_HOLBERTON_H
+#define INV_HOLBERTON_H
 
 int _putchar(char);
 char *_strcat(char *dest, char *src);
