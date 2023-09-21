@@ -10,7 +10,7 @@
  * Return: String with all letters in ROT13 base.
  */
 
-char* infinite_add(char* n1, char* n2, char* r, int size_r) {
+char *infinite_add(char *n1, char *n2, char *r, int size_r) {
     int len1 = strlen(n1);
     int len2 = strlen(n2);
     
