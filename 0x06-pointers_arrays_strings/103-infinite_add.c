@@ -1,67 +1,78 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * infinite_add - add 2 strings.
- * @n1: string1.
- * @n2: string2.
- * @r: buffer
- * @size_r: buffer size
- * Return: String with all letters in ROT13 base.
+ * rev_string - reverse array
+ * @n: integer params
+ * Return: 0
  */
 
-char *infinite_add(char *n1, char *n2, char *r, int size_r) {
-    int len1 = strlen(n1);
-    int len2 = strlen(n2);
-    
-    // Check if the result can fit in the buffer
-    if (len1 + len2 >= size_r)
-        return 0;
+void rev_string(char *n)
+{
+	int i = 0;
+	int j = 0;
+	char temp;
 
-    int carry = 0;  // Initialize carry to 0
-    int i = len1 - 1;
-    int j = len2 - 1;
-    int k = 0;  // Index for the result
+	while (*(n + i) != '\0')
+	{
+		i++;
+	}
+	i--;
 
-    // Add digits from right to left
-    while (i >= 0 || j >= 0 || carry) {
-        int num1 = (i >= 0) ? (n1[i] - '0') : 0;
-        int num2 = (j >= 0) ? (n2[j] - '0') : 0;
-        int sum = num1 + num2 + carry;
-
-        carry = sum / 10;
-        r[k] = (sum % 10) + '0';
-
-        i--;
-        j--;
-        k++;
-    }
-
-    r[k] = '\0';
-
-    // Reverse the result string
-    for (int start = 0, end = k - 1; start < end; start++, end--) {
-        char temp = r[start];
-        r[start] = r[end];
-        r[end] = temp;
-    }
-
-    return r;
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
 }
 
-int main() {
-    char n1[] = "12345";
-    char n2[] = "67890";
-    int size_r = 20;
-    char r[size_r];
+/**
+ * infinite_add - add 2 numbers together
+ * @n1: text representation of 1st number to add
+ * @n2: text representation of 2nd number to add
+ * @r: pointer to buffer
+ * @size_r: buffer size
+ * Return: pointer to calling function
+ */
 
-    char* result = infinite_add(n1, n2, r, size_r);
-    if (result != 0) {
-        printf("Sum: %s\n", result);
-    } else {
-        printf("Result cannot be stored in the buffer.\n");
-    }
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
+{
+	int overflow = 0, i = 0, j = 0, digits = 0;
+	int val1 = 0, val2 = 0, temp_tot = 0;
 
-    return 0;
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
+		return (0);
+	while (j >= 0 || i >= 0 || overflow == 1)
+	{
+		if (i < 0)
+			val1 = 0;
+		else
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
+		else
+			val2 = *(n2 + j) - '0';
+		temp_tot = val1 + val2 + overflow;
+		if (temp_tot >= 10)
+			overflow = 1;
+		else
+			overflow = 0;
+		if (digits >= (size_r - 1))
+			return (0);
+		*(r + digits) = (temp_tot % 10) + '0';
+		digits++;
+		j--;
+		i--;
+	}
+	if (digits == size_r)
+		return (0);
+	*(r + digits) = '\0';
+	rev_string(r);
+	return (r);
 }
-
