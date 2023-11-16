@@ -2,9 +2,7 @@
 
 /**
   * factorial - function parameter
-  *
   * @n: function parameter
-  *
   * Returns Function n.
   */
 int factorial(int n)
@@ -19,6 +17,6 @@ int factorial(int n)
 	}
 	else
 	{
-		return (n * factorial(n - 1));
+	return (n * factorial(n - 1));
 	}
 }
