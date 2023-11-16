@@ -2,10 +2,10 @@
 
 /**
   * factorial - function parameter
-  * n: parameter
+  * @n: parameter
   * Returns n.
   */
- 
+
 int factorial(int n)
 {
 	if (n < 0)
