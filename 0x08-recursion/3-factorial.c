@@ -3,7 +3,7 @@
 /**
   * factorial - function parameter
   * @n: parameter
-  * Returns n.
+  * Returns function n.
   */
 
 int factorial(int n)
