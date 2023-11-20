@@ -16,12 +16,12 @@ char *_strpbrk(char *s, char *accept)
         {
             if (*s == *check)
             {
-                return s;  // Return a pointer to the first occurrence in accept
+                return s;
             }
             check++;
         }
         s++;
     }
 
-    return s;  // Return a pointer to the terminating null byte if no match is found
+    return s;
 }

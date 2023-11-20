@@ -28,5 +28,5 @@ char *_strstr(char *haystack, char *needle)
         haystack = h + 1;
     }
 
-    return haystack; // Pointer to the end of haystack if substring is not found
+    return haystack;
 }

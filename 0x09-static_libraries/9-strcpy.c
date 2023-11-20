@@ -18,7 +18,7 @@ char *_strcpy(char *dest, char *src)
         src++;
     }
 
-    *dest = '\0';  // Append the null terminator to the destination string
+    *dest = '\0';
 
     return original_dest;
 }

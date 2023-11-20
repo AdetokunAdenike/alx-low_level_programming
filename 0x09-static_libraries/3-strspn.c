@@ -22,7 +22,7 @@ unsigned int _strspn(const char *s, const char *accept)
 
         if (*accept_ptr == '\0')
         {
-            break;  // Break if the character in s is not in accept
+            break;
         }
 
         count++;

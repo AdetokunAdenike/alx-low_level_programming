@@ -13,15 +13,15 @@ char *_strchr(char *s, char c)
     {
         if (*s == c)
         {
-            return s;  // Return a pointer to the first occurrence of c
+            return s;
         }
         s++;
     }
 
-    if (*s == c)
+        if (*s == c)
     {
-        return s;  // Return a pointer to the null terminator if c is '\0'
+        return s;
     }
 
-    return NULL;  // Return NULL if c is not found
+        return (0);
 }
