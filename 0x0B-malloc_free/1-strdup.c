@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _strdup - Return a pointer to the newly allocated space in memory.
+ * _strdup - returns a pointer to the newly allocated space in memory.
  * @str: String parameter.
  * Returns: returns char pointer on success, otherwise NULL.
 */
