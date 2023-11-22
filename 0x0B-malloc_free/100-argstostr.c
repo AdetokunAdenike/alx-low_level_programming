@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 		}
 		total_length++;
 	}
-	
+
 	result = malloc(sizeof(char) * (total_length + 1));
 	if (result == NULL)
 	{
@@ -40,12 +40,12 @@ char *argstostr(int ac, char **av)
 		{
 			result[k++] = av[i][j];
 		}
-		
+
 		result[k++] = '\n';
 	}
-	
+
 	result[k] = '\0';
-	
+
 	return (result);
 }
 
