@@ -5,7 +5,6 @@
  * str_concat - concatenates two strings.
  * @s1: first parameter.
  * @s2: second parameter.
- *
  * Returns: returns character pointer upon success, NULL otherwise.
 */
 
