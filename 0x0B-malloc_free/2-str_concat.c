@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * str_concat- concatenates two strings.
+ * str_concat - concatenates two strings.
  * @s1: first parameter.
  * @s2: second parameter.
- * Returns: return character pointer upon success, otherwise NULL.
+ * Returns: returns character pointer upon success, otherwise NULL.
 */
 
 char *str_concat(char *s1, char *s2)
