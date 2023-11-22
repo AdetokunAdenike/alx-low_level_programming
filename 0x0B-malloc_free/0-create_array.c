@@ -5,7 +5,7 @@
  * create_array - Creates an array of chars.
  * @size: Size of memory to print.
  * @c: character to be initialized.
- * Returns pointer on success, otherwise NULL
+ * Returns: pointer on success, otherwise NULL
 */
 char *create_array(unsigned int size, char c)
 
