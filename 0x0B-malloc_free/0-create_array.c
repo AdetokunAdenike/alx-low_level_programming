@@ -7,8 +7,8 @@
  * @c: character to be initialized.
  * Return: pointer on success, otherwise NULL.
 */
-char *create_array(unsigned int size, char c)
 
+char *create_array(unsigned int size, char c)
 {
     char *A;
     unsigned int i;
@@ -23,7 +23,7 @@ char *create_array(unsigned int size, char c)
     {
         return NULL;
     }
-    for (i = 0; i < size; i++)
+    for (i = 0; i < size; i++) 
           A[i] = c;
-    return (A);
+    return A;
 }
