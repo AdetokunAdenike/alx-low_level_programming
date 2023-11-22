@@ -6,7 +6,7 @@
  * @s1: first parameter.
  * @s2: second parameter.
  *
- * Returns: Returns character pointer upon success, NULL otherwise.
+ * Returns: returns character pointer upon success, NULL otherwise.
 */
 
 char *str_concat(char *s1, char *s2)
