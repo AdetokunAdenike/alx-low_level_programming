@@ -5,7 +5,7 @@
  * _strdup- returns a pointer to the newly allocated
  * space in memory.
  * @str: String parameter.
- * Returns: returns char pointer on success, otherwise NULL.
+ * Returns: returns char pointer on success, NULL otherwise.
 */
 
 char *_strdup(char *str)
