@@ -2,10 +2,9 @@
 #include <stdlib.h>
 
 /**
- * _strdup- returns a pointer to the newly allocated space in memory.
- * @str: String parameter.
- * 
- * Returns: returns char pointer upon success, NULL otherwise.
+ * _strdup - returns a pointer to newly allocated space in memory.
+ * @str: string parameter.
+ * Return: char pointer upon success, otherwise NULL.
 */
 
 char *_strdup(char *str)
