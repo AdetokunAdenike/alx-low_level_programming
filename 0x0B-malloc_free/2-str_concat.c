@@ -5,7 +5,7 @@
  * str_concat- concatenates two strings.
  * @s1: first parameter.
  * @s2: second parameter.
- * Returns: character pointer upon success, otherwise NULL.
+ * Returns: return character pointer upon success, otherwise NULL.
 */
 
 char *str_concat(char *s1, char *s2)
@@ -43,4 +43,5 @@ char *str_concat(char *s1, char *s2)
 		A[i + j] = s2[j];
 	A[i + j] = '\0';
 	return (A);
-}	
+	}
+}
