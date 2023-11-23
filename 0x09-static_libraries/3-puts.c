@@ -1,16 +1,18 @@
 #include "main.h"
-#include<stdio.h>
+#include <stdio.h>
 
 /**
- * main - Entry point
- * Return: Always 0 (Success)
- */
+ * _puts - Custom implementation of puts.
+ * @str: String to be printed.
+*/
 
-void _puts(char *str);
-
-int main(void)
+void _puts(char *str)
 {
-        	puts("\"I love C programming");
-        	return (0);
-}
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
 
+	write(1, "\n", 1);
+}
