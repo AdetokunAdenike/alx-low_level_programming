@@ -11,9 +11,11 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *ptr = malloc(b);
+	void *ptr;
 
-	if  (ptr == NULL)
+	ptr = malloc(b);
+
+	if (ptr == NULL)
 	{
 		write(2, "Memory allocation failed\n", 26);
 		
