@@ -18,9 +18,7 @@ void *malloc_checked(unsigned int b)
 
 	if (ptr == NULL)
 	{
-		write(2, "Memory allocation failed\n", 26);
-
-		_exit(98);
+		exit(98);
 	}
 
 	return (ptr);
