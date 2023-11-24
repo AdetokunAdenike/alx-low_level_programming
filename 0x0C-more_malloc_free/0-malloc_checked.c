@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <unistd.h>
+
 /**
  * malloc_checked - Allocates memory using malloc.
  * @b: size of the memory to allocate.
@@ -18,10 +19,9 @@ void *malloc_checked(unsigned int b)
 	if (ptr == NULL)
 	{
 		write(2, "Memory allocation failed\n", 26);
-		
+
 		_exit(98);
 	}
 
 	return (ptr);
 }
-
