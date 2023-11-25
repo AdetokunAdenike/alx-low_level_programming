@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-
+#include <unistd.h>
 /**
  * _puts - Custom implementation of puts.
  * @str: String to be printed.
