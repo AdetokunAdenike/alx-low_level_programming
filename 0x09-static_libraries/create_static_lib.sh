@@ -5,7 +5,7 @@ file="liball.a"
 
 for filename in "$working_dir"/*; do
 	if [["$filename" == *"$extension"]]; then
-		gcc -c "$filesname" -o "${filename$.c}.o"
+		gcc -c "$filename" -o "${filename%.c}.o"
 	fi
 done
 
