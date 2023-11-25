@@ -1,5 +1,5 @@
 #!/bin/bash
-0x09-static_libraries=$(pwd)
+working_dir=$(pwd)
 file_extension=".c"
 file="liball.a"
 
