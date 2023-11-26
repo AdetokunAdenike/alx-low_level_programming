@@ -1,12 +1,3 @@
 #!/bin/bash
-working_dir=$(pwd)
-file_extension=".c"
-file="liball.a"
-
-for filename in "$working_dir"/*; do
-	if [["$filename" == *"$file_extension"]]; then
-		gcc -c "$filename" -o "${filename%.c}.o"
-	fi
-done
-
-ar -rcs "$file" *.o
+gcc -Wall -Werror -Wextra -pedantic -c *.c
+ar rc liball.a *.o
