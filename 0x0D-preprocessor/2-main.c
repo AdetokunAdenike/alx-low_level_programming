@@ -3,8 +3,9 @@
 /**
  * main - A main function and the entry point
  * Return: returns zero
-*/
-int main()
+ */
+
+int main(void)
 {
 	printf("Compiled from: %s\n", __FILE__);
 	return (0);
