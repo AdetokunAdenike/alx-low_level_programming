@@ -1,5 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
+/**
+ * create_array - Creates an array of chars.
+ * @size: Size of memory to print.
+ * @c: Character to be initialized.
+ * Return: Returns pointer on success, otherwise NULL.
+ */
 
 char *create_array(unsigned int size, char c)
 {
