@@ -75,7 +75,7 @@ char **strtow(char *str)
 	i++;
     }
 
-	words[word_index] = (NULL);
+	words[word_index] = NULL;
 
 	return (words);
 }
