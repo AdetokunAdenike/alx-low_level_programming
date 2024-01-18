@@ -70,6 +70,7 @@ char **strtow(char *str)
 		num_words++;
 	}
 
-	result[num_words] = NULL;
+	result[num_words + 1] = NULL;
+
 	return (result);
 }
