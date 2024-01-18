@@ -1,76 +1,82 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /**
  * strtow - Splits a string into words.
  * @str: Input string.
- *
- * Return: Pointer to an array of strings (words), NULL on failure.
+ * Return: Pointer to an array of strings, otherwise NULL.
  */
 char **strtow(char *str)
 {
-	int num_words = 0, in_word = 0;
-	char **result = NULL;
-	char *start = str;
-	int i;
+	int len = 0;
+	int word_count = 0;
+	int i = 0;
+	int word_index = 0;
+	int word_start = 0;
+	char **words;
+	int j = 0;
+	int k = 0;
 
 	if (str == NULL || *str == '\0')
-		return (NULL);
+    {
+	return (NULL);
+    }
 
-	while (*str)
-	{
-		if (*str == ' ')
-		{
-			if (in_word)
-			{
-				result = malloc(sizeof(char *) * (num_words + 2));
-				if (result == NULL)
-					return (NULL);
+	while (str[len] != '\0')
+    {
+	len++;
+    }
 
-				result[num_words] = malloc(str - start + 1);
-				if (result[num_words] == NULL)
-				{
-					free(result);
-					return (NULL);
-				}
+	while (i < len)
+    {
+	if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
+        {
+	word_count++;
+        }
+	i++;
+    }
 
-				for (i = 0; start + i < str; i++)
-					result[num_words][i] = start[i];
-				result[num_words][i] = '\0';
+	words = (char **)malloc((word_count + 1) * sizeof(char *));
+	if (words == NULL)
+    {
+	return (NULL);
+    }
 
-				num_words++;
-				in_word = 0;
-			}
-		}
-		else if (!in_word)
-		{
-			start = str;
-			in_word = 1;
-		}
-		str++;
-	}
-
-	if (in_word)
-	{
-		result = malloc(sizeof(char *) * (num_words + 2));
-		if (result == NULL)
+	while (i <= len)
+    {
+		if (str[i] == ' ' || str[i] == '\0')
+        {
+		if (i > word_start)
+            {
+		words[word_index] = (char *)malloc((i - word_start + 1) * sizeof(char));
+		if (words[word_index] == NULL)
+                {
+		while (j < word_index)
+                    {
+			free(words[j]);
+			j++;
+                    }
+			free(words);
 			return (NULL);
+                }
 
-		result[num_words] = malloc(str - start + 1);
-		if (result[num_words] == NULL)
-		{
-			free(result);
-			return (NULL);
-		}
+		while (k < (i - word_start))
+                {
+		words[word_index][k] = str[word_start + k];
+			k++;
+                }
+		words[word_index][k] = '\0';
 
-		for (i = 0; start + i < str; i++)
-			result[num_words][i] = start[i];
-		result[num_words][i] = '\0';
+		word_index++;
+            }
 
-		num_words++;
-	}
+		word_start = i + 1;
+        }
+	i++;
+    }
 
-	result[num_words + 1] = NULL;
+	words[word_index] = (NULL);
 
-	return (result);
+	return (words);
 }
+
