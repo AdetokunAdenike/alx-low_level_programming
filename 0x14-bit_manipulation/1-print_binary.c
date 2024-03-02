@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * base_ pow - The function calculates power of a number.
+ * base_pow - The function calculates power of a number.
  * @base: The base number of the exponential.
  * @power: The power of the exponential.
  *
