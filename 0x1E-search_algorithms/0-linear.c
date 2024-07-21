@@ -7,7 +7,6 @@
  * @array: array of ints
  * @size: size of array
  * @value: value to search for
- *
  * Return: position or -1 if not found
  *
  */
