@@ -4,7 +4,7 @@
 
 /**
  * linear_search - linear search algorithm
- * @array: Pointer to array of ints
+ * @array: array of ints
  * @size: size of array
  * @value: value to search for
  * Return: position or -1 if not found
