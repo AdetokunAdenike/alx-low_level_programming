@@ -3,10 +3,11 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Binary search algorithm
+ * binary_search - A Binary search algorithm
  * @array: Pointer to the first element of the array to search in
- * @size: Number of elements in array
+ * @size: Size of array
  * @value: Value to search for
+ *
  * Return: Index where value is located, or -1 if not present
  */
 
