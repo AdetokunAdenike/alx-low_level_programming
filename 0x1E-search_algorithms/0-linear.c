@@ -7,8 +7,8 @@
  * @array: Pointer to the array of ints
  * @size: Number of elements in the array
  * @value: value to search for
- *
  * Return: position or -1 if not found
+ *
  */
 
 int linear_search(int *array, size_t size, int value)
