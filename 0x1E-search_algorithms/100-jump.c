@@ -3,53 +3,43 @@
 #include "search_algos.h"
 
 /**
- * jump_search - Jump search algorithm
- * @array: Pointer to the first element of the array to search in
- * @size: Number of elements in array
- * @value: Value to search for
- * Return: Index where value is located, or -1 if not present
+ * jump_search - searches for a value in an array of
+ * integers using the Jump search algorithm
+ *
+ * @array: input array
+ * @size: size of the array
+ * @value: value to search in
+ * Return: index of the number
  */
-
 int jump_search(int *array, size_t size, int value)
 {
-	int block, block_size;
-	int i = 0, holder = 0;
+	int index, m, k, prev;
 
-	if (array == NULL || size == 0) /* Check if the array is NULL */
+	if (array == NULL || size == 0)
 		return (-1);
-	/* Calculate the block size using square root of size */
-	block = sqrt((int)size);
-	block_size = block;
 
-	/* Print the initial value checked */
-	printf("Value checked array[%d] = [%d]\n", holder, array[holder]);
+	m = (int)sqrt((double)size);
+	k = 0;
+	prev = index = 0;
 
-	/* Perform the jump search */
-	while (array[block] <= value && block <= (int)size - 1)
+	do {
+		printf("Value checked array[%d] = [%d]\n", index, array[index]);
+
+		if (array[index] == value)
+			return (index);
+		k++;
+		prev = index;
+		index = k * m;
+	} while (index < (int)size && array[index] < value);
+
+	printf("Value found between indexes [%d] and [%d]\n", prev, index);
+
+	for (; prev <= index && prev < (int)size; prev++)
 	{
-		/* Break if the value is found at the current block or initial index */
-		if (array[i] == value || array[block] == value)
-			break;
-		holder = block; /* Update holder index and print the checked value */
-		printf("Value checked array[%d] = [%d]\n", holder, array[block]);
-		block = block + block_size; /* Move to the next block */
+		printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
+		if (array[prev] == value)
+			return (prev);
 	}
 
-	/* Print the range where the value is found */
-	printf("Value found between indexes [%d] and [%d]\n", holder, block);
-	/* Linear search within the identified range */
-	while (holder <= block)
-	{
-		/* Check for array bounds */
-		if (holder >= (int)size)
-			return (-1);
-		/* Print the checked value */
-		printf("Value checked array[%d] = [%d]\n", holder, array[holder]);
-
-		if (array[holder] == value) /*Return the index if the value is found*/
-			return (holder);
-		holder++; /* Move to the next element in the range */
-	}
-
-	return (-1); /* Return -1 if the value is not found */
+	return (-1);
 }
