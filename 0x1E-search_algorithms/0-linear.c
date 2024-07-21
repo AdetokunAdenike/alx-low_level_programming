@@ -3,7 +3,7 @@
 #include "search_algos.h"
 
 /**
- * linear_search - linear search algorithm
+ * linear_search - A linear search algorithm
  * @array: array of ints
  * @size: size of array
  * @value: value to search for
